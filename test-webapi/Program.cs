@@ -1,11 +1,15 @@
 
+using Microsoft.AspNetCore.Hosting;
 using NLog.Extensions.Logging;
+using System.Runtime.CompilerServices;
 
 namespace test_webapi {
 	public class Program {
 		public static void Main(string[] args) {
 			var builder = WebApplication.CreateBuilder(args);
 			var MyAllowSpecificOrigins = "_myAllowSpecificOrigins";
+
+			System.IO.Directory.CreateDirectory(Path.Combine(Environment.CurrentDirectory, "data"));
 
 			// Add services to the container.
 			builder.Services.AddCors(options => {
