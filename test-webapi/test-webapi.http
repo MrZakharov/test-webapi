@@ -1,0 +1,6 @@
+@test_webapi_HostAddress = http://localhost:5183
+
+GET {{test_webapi_HostAddress}}/
+Accept: application/json
+
+###
